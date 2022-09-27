@@ -109,7 +109,7 @@ VALUES
   ('O Medo de Amar é o Medo de Ser Livre', 5, 207, 3),
   ('Samba em Paris', 6, 267, 4),
   ("The Bard\'s Song", 7, 244, 5),
-  ('Feeling Good', 8, 1000, 6);
+  ('Feeling Good', 8, 100, 6);
 
 INSERT INTO historys (song_id, user_id, history_date)
 VALUES
