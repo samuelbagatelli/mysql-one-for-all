@@ -37,8 +37,8 @@ CREATE TABLE songs(
   album_id INT NOT NULL,
   duration_time INT NOT NULL,
   artist_id INT NOT NULL,
-  FOREIGN KEY (album_id) REFERENCES albuns(album_id),
-  FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+  FOREIGN KEY (artist_id) REFERENCES artists(artist_id),
+  FOREIGN KEY (album_id) REFERENCES albuns(album_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE historys(
@@ -64,7 +64,7 @@ VALUES
   ('familiar', 7.99),
   ('universitario', 5.99),
   ('pessoal', 6.99);
-  
+
 INSERT INTO users (username, user_age, sign_date, plan_id)
 VALUES
   ('Barbara Liskov', 82, "2019-10-20", 1),
@@ -86,7 +86,7 @@ VALUES
   ('Baco Exu do Blues'),
   ('Blind Guardian'),
   ('Nina Simone');
-  
+
 INSERT INTO albuns (album, artist_id, release_date)
 VALUES
   ('Renaissance', 1, 2022),
@@ -110,3 +110,39 @@ VALUES
   ('Samba em Paris', 6, 267, 4),
   ("The Bard\'s Song", 7, 244, 5),
   ('Feeling Good', 8, 1000, 6);
+
+INSERT INTO historys (song_id, user_id, history_date)
+VALUES
+  (8, 1, "2022-02-28 10:45:55"),
+  (2, 1, "2020-05-02 05:30:35"),
+  (10, 1, "2020-03-06 11:22:33"),
+  (10,2, "2022-08-05 08:05:17"),
+  (7, 2, "2020-01-02 07:40:33"),
+  (10, 3, "2020-11-13 16:55:13"),
+  (2, 3, "2020-12-05 18:38:30"),
+  (8, 4, "2021-08-15 17:10:10"),
+  (8, 5, "2022-01-09 01:44:33"),
+  (5, 5, "2020-08-06 15:23:43"),
+  (7, 6, "2017-01-24 00:31:17"),
+  (1, 6, "2017-10-12 12:35:20"),
+  (4, 7, "2011-12-15 22:30:49"),
+  (4, 8, "2012-03-17 14:56:41"),
+  (9, 9, "2022-02-24 21:14:22"),
+  (3, 10, "2015-12-13 08:30:22");
+
+INSERT INTO follow (user_id, artist_id)
+VALUES
+  (1, 1),
+  (1, 2),
+  (1, 3),
+  (2, 1),
+  (2, 3),
+  (3, 2),
+  (4, 4),
+  (5, 5),
+  (5, 6),
+  (6, 6),
+  (6, 1),
+  (7, 6),
+  (9, 3),
+  (10, 2);
